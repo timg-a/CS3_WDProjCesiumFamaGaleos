@@ -6,6 +6,8 @@ Website Title: All About Table Tennis
 
 Logo: ![](./assets/logo.png)
 
+(if logo is not visible, check assets folder)
+
 Pages:
 - Home
 - About Table Tennis
@@ -24,4 +26,6 @@ Description: All About Table Tennis is your go-to website for anything table ten
 
 
 Possible JS: JS can be used for animation purposes
+
+Wireframe: in assets folder
 
