@@ -11,12 +11,13 @@
 <style>
 
 body {
-    background-color: #161616;
+    background-color: #070707;
+    font-family: "Noto Sans", sans-serif;
 }
 
 .navbar {
     display: flex;
-    background-color: #e04040;
+    background-color: #111111;
     overflow: hidden;
     height: 5vh;
     align-items: center;
@@ -30,21 +31,32 @@ body {
     padding-left: 150px;
     padding-right: 150px;
     padding-top: 1.2%;
-    font-family: "Noto Sans", sans-serif;
     font-size: 18px;
     color: white;
-    background-color: #e04040;
     height: 100%;
 }
 
+.title {
+    text-align: center;
+    color: white;
+    line-height: 1px;
+}
+
+.title p {
+    font-size: 23px;
+}
+
+.title h1 {
+    font-size: 5rem;
+}
+
 @keyframes bgchange {
-    100% {background-color: #cf3c3c;}
+    100% {background-color: #df4242;}
 }
 
 .navbar a:hover {
     animation: bgchange 0.3s forwards;
 }
-
 </style>
 
 </head>
@@ -56,5 +68,9 @@ body {
     <a href="">Equipment</a>
     <a href="">Top Players</a>
    </div>
+
+   <br><br>
+
+   <div class="title"><p>This is</p><h1>Table Tennis.</h1></div>
 </body>
 </html>
