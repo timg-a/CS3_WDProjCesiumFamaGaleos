@@ -5,123 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AATT: Home</title>
 
+    <link rel="stylesheet" href="style.css">
+
 </head>
-
-<style>
-
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
-
-:root {
-    --background: #181818;
-    --menus: #252525;
-    --accent: #e54c4c;
-    --text: #e3e3e3;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    color: var(--text);
-}
-
-html {
-    font-family: "DM Sans", sans-serif;
-}
-
-body {
-    background: var(--background);
-}
-
-nav {
-    height: 67px;
-    background-color: var(--menus);
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    font-size: 17px;
-    z-index: 10;
-}
-
-.link {
-    height: 100%; width: 100%;
-    display: flex;
-    align-items: center;
-}
-
-nav a {
-    height: 100%;
-    padding: 0 50px;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: var(--text);
-}
-
-nav a:hover {
-    background-color: var(--accent);
-    transition: background-color 0.2s;
-}
-
-nav .home {
-    margin-right: auto;
-}
-
-#sidebar-toggle {
-    display: none;
-}
-
-.side-open, .side-closed {
-    display: none;
-}
-
-@media (max-width: 500px) {
-    .link {
-        flex-direction: column;
-        align-items: flex-start;
-        position: fixed;
-        top: 0;
-        right: -100%;
-        z-index: 10;
-        width: 350px;
-        background-color: var(--menus);
-        box-shadow: -5px 0 5px rgba(0,0,0,0.25);
-        transition: 0.5s ease;
-    }
-
-    nav a {
-        box-sizing: border-box;
-        height: auto;
-        width: 100%;
-        padding: 20px 30px;
-        justify-content: flex-start;
-    }
-
-    .side-open, .side-closed {
-        padding: 20px;
-        display: block;
-    }
-
-    #sidebar-toggle:checked ~ .link {
-        right: 0;
-    }
-}
-
-img {
-    position: absolute;
-    opacity: 5%;
-    z-index: -10;
-}
-
-h1 {
-    text-align: center;
-    font-size: 67px;
-}
-
-</style>
 
 <body>
 
-<img src="./assets/background.jpg" height="100%" width="100%">
+<img class="background" src="./assets/background.jpg" height="100%" width="100%">
 
     <nav>
         <input type="checkbox" id="sidebar-toggle">
