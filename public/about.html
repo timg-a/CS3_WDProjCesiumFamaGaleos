@@ -33,6 +33,8 @@ body {
 }
 
 nav {
+    position: sticky;
+    top: 0;
     height: 67px;
     background-color: var(--menus);
     display: flex;
@@ -157,6 +159,41 @@ p {
     text-align: center;
 }
 
+.xan-slide img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.xan-slider {
+    height: 300px;
+    margin: auto;
+    position: relative;
+    width: 90%;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+.xan-track {
+    display: flex;
+    width: calc(300px * 8);
+    animation: scroll 15s reverse linear infinite;
+}
+
+.xan-slide {
+    height: 300px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+
+.xan-title {
+    font-size: 30px;
+    text-align: center;
+}
+
 @keyframes scroll {
     0% {
         transform: translateX(0);
@@ -165,6 +202,14 @@ p {
     100% {
         transform: translateX(calc(-330px * 4));
     }
+}
+
+.about-tim {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
 }
 
 </style>
@@ -233,7 +278,40 @@ p {
         </div>
     </div>
     <br>
-    <p>Tim is a PSHS student of Batch 2029. He has many hobbies, including table tennis, coding, and music production.</p>
+    <div class="about-tim">Tim is a grade 9 student at the Philippine Science High School (PSHS). He currently resides in Barangay Pasong Putik in Quezon City. He has several hobbies, most notably table tennis and music production.</div>
+    <br><br><br>
+
+    <div class="xan-title">Xander Gabriel G. Fama</div><br>
+
+    <div class="xan-slider">
+        <div class="xan-track">
+            <div class="xan-slide">
+                <img src="/assets/xander1.jpg">
+            </div>
+            <div class="xan-slide">
+                <img src="/assets/xander2.jpg">
+            </div>
+            <div class="xan-slide">
+                <img src="/assets/xander3.jpeg">
+            </div>
+            <div class="xan-slide">
+                <img src="/assets/xander4.jpeg">
+            </div>
+
+            <div class="xan-slide">
+                <img src="/assets/xander1.jpg">
+            </div>
+            <div class="xan-slide">
+                <img src="/assets/xander2.jpg">
+            </div>
+            <div class="xan-slide">
+                <img src="/assets/xander3.jpeg">
+            </div>
+            <div class="xan-slide">
+                <img src="/assets/xander4.jpeg">
+            </div>
+        </div>
+    </div>
 
 
 </body>
