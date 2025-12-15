@@ -1,76 +1,151 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-   <title>All About Table Tennis</title>
-   <link rel="icon" type="image" href="./assets/logo.jpg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AATT: About Us</title>
 
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
 
 <style>
 
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+:root {
+    --background: #181818;
+    --menus: #252525;
+    --accent: #e54c4c;
+    --text: #e3e3e3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    color: var(--text);
+}
+
+html {
+    font-family: "DM Sans", sans-serif;
+}
+
 body {
-    background-color: #070707;
-    font-family: "Noto Sans", sans-serif;
+    background: var(--background);
 }
 
-.navbar {
+nav {
+    height: 67px;
+    background-color: var(--menus);
     display: flex;
-    background-color: #111111;
-    overflow: hidden;
-    height: 5vh;
+    justify-content: flex-end;
     align-items: center;
-    justify-content: space-between;
+    font-size: 17px;
+    z-index: 10;
 }
 
-.navbar a {
-    float: left;
-    text-align: center;
-    text-decoration: none;
-    padding-left: 150px;
-    padding-right: 150px;
-    padding-top: 1.2%;
-    font-size: 18px;
-    color: white;
+.link {
+    height: 100%; width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+nav a {
     height: 100%;
+    padding: 0 50px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text);
 }
 
-.title {
+nav a:hover {
+    background-color: var(--accent);
+    transition: background-color 0.2s;
+}
+
+nav .home {
+    margin-right: auto;
+}
+
+#sidebar-toggle {
+    display: none;
+}
+
+.side-open, .side-closed {
+    display: none;
+}
+
+@media (max-width: 500px) {
+    .link {
+        flex-direction: column;
+        align-items: flex-start;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 10;
+        width: 350px;
+        background-color: var(--menus);
+        box-shadow: -5px 0 5px rgba(0,0,0,0.25);
+        transition: 0.5s ease;
+    }
+
+    nav a {
+        box-sizing: border-box;
+        height: auto;
+        width: 100%;
+        padding: 20px 30px;
+        justify-content: flex-start;
+    }
+
+    .side-open, .side-closed {
+        padding: 20px;
+        display: block;
+    }
+
+    #sidebar-toggle:checked ~ .link {
+        right: 0;
+    }
+}
+
+.background {
+    position: absolute;
+    opacity: 5%;
+    z-index: -10;
+}
+
+h1 {
     text-align: center;
-    color: white;
-    line-height: 1px;
+    font-size: 67px;
 }
 
-.title p {
-    font-size: 23px;
-}
-
-.title h1 {
-    font-size: 5rem;
-}
-
-@keyframes bgchange {
-    100% {background-color: #df4242;}
-}
-
-.navbar a:hover {
-    animation: bgchange 0.3s forwards;
-}
 </style>
 
-</head>
 <body>
-   <div class="navbar">
-    <a href="/public/index.html">Home</a>
-    <a href="/public/about.html">About</a>
-    <a href="/public/how.html">How To</a>
-    <a href="/public/equipment.html">Equipment</a>
-    <a href="/public/tplayers.html">Top Players</a>
-   </div>
 
-   <br><br>
+<img class="background" src="/assets/background.jpg" height="100%" width="100%">
 
+    <nav>
+        <input type="checkbox" id="sidebar-toggle">
+        <label for="sidebar-toggle" class="side-open">
+            <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#e3e3e3"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+        </label>
+
+        <label id="overlay" for="sidebar-toggle"></label>
+
+    <div class="link">
+        <label for="sidebar-toggle" class="side-closed">
+            <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#e3e3e3"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+        </label>
+
+        <a class="home" href="/public/index2.html">Home</a>
+        <a href="/public/tplayers.html">Players</a>
+        <a href="/public/how.html">How To Play</a>
+        <a href="/public/equipment.html">Equipment</a>
+        <a href="/public/about.html">About Us</a>
+
+    </div>
+    </nav>
+
+    <br><br>
 
 </body>
 </html>

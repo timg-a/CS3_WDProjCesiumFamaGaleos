@@ -106,10 +106,11 @@ nav .home {
     }
 }
 
-img {
+.background {
     position: absolute;
     opacity: 5%;
     z-index: -10;
+    overflow: hidden;
 }
 
 h1 {
@@ -117,11 +118,60 @@ h1 {
     font-size: 67px;
 }
 
+p {
+    text-align: center;
+}
+
+.tim-slide img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.tim-slider {
+    height: 300px;
+    margin: auto;
+    position: relative;
+    width: 90%;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+.tim-track {
+    display: flex;
+    width: calc(300px * 8);
+    animation: scroll 15s linear infinite;
+}
+
+.tim-slide {
+    height: 300px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+
+.tim-title {
+    font-size: 30px;
+    text-align: center;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-330px * 4));
+    }
+}
+
 </style>
 
 <body>
 
-<img src="/assets/background.jpg" height="100%" width="100%">
+<img class="background" src="/assets/background.jpg" height="275%" width="100%">
 
     <nav>
         <input type="checkbox" id="sidebar-toggle">
@@ -148,6 +198,43 @@ h1 {
     <br><br>
 
     <h1>About Us</h1>
+
+    <br><br><br>
+
+    <div class="tim-title">Timothy Grey E. Galeos</div><br>
+
+    <div class="tim-slider">
+        <div class="tim-track">
+            <div class="tim-slide">
+                <img src="/assets/tim1.jpg">
+            </div>
+            <div class="tim-slide">
+                <img src="/assets/tim2.jpg">
+            </div>
+            <div class="tim-slide">
+                <img src="/assets/tim3.jpg">
+            </div>
+            <div class="tim-slide">
+                <img src="/assets/tim4.jpg">
+            </div>
+
+            <div class="tim-slide">
+                <img src="/assets/tim1.jpg">
+            </div>
+            <div class="tim-slide">
+                <img src="/assets/tim2.jpg">
+            </div>
+            <div class="tim-slide">
+                <img src="/assets/tim3.jpg">
+            </div>
+            <div class="tim-slide">
+                <img src="/assets/tim4.jpg">
+            </div>
+        </div>
+    </div>
+    <br>
+    <p>Tim is a PSHS student of Batch 2029. He has many hobbies, including table tennis, coding, and music production.</p>
+
 
 </body>
 </html>
