@@ -1,12 +1,7 @@
 let oldPosition = window.scrollY;
 
-<<<<<<< HEAD
-window.onscroll = topUp() {
-    let currentPosition = window.scrollY;
-=======
 window.onscroll = function() {
-    let currentPosition = window.pageYOffset;
->>>>>>> d44483b4a79888d17344e9dababa910fec447dd8
+    let currentPosition = window.scrollY;
 
     if (oldPosition > currentPosition) {
         document.getElementsByTagName("nav")[0].style.top = "0";
