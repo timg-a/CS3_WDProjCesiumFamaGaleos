@@ -1,3 +1,5 @@
+import * 
+
 let oldPosition = window.pageYOffset;
 
 window.onscroll = function() {
