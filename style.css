@@ -101,6 +101,29 @@ nav .home {
     }
 }
 
+.index-desc {
+    display: flex;
+    width: 40%;
+    margin-left: 100px;
+    margin-right: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.index-desc p {
+    text-align: left;
+}
+
+.index-image {
+    display: flex;
+    margin-right: 100px;
+    margin-left: auto;
+    width: 500px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
 .background {
     position: absolute;
     opacity: 5%;
