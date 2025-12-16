@@ -74,6 +74,11 @@ body {
     position: sticky;
     top: 100px;
     transform: translateX(0px);
+    transition: none;
+}
+
+.follow {
+    transform: translateX(600px);
 }
 
 .content {
@@ -145,10 +150,8 @@ function findTop() {
     let rect = follow.getBoundingClientRect();
     console.log(rect.top);
 
-    if (rect.top <= 100) {
-        follow.style.transform = 'translateX(600px)';
-    } else {
-        follow.style.transform = 'translateX(0px)'
+    if (rect.top <= 150) {
+        follow.style.transition = 'transform 1s';
     }
 }
 
