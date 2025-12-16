@@ -215,12 +215,6 @@ footer a {
     text-decoration: none;
 }
 
-.blade-image-div {
-    display: flex;
-    align-items: flex-end;
-}
-
 .blade-image {
-    margin-left: auto;
-    margin-right: 0;
+    float: right;
 }
