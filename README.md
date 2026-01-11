@@ -29,3 +29,8 @@ Possible JS: JS can be used for animation purposes
 
 Wireframe: in assets folder
 
+-----------------------------------------------------------------------------------------------------------------
+
+Form Implementation: Forms can be implemented in order to find a user's playstyle, and afterwards recommend them players to watch or equipments to use. To remember the user's choice, we could also have them create an account.
+
+New Webpages: Account/Login page and Recommended page
