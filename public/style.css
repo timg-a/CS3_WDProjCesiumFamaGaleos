@@ -264,3 +264,49 @@ footer a {
     float: right;
     margin-left: 15px;
 }
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form fieldset {
+    padding: auto;
+    border-radius: 20px;
+}
+
+.form form {
+    width: 670px;
+    padding: 20px;
+}
+
+.form h2 {
+    text-align: center;
+    font-size: 100px;
+}
+
+.form input[type="text"], .form input[type="password"]{
+    background-color: rgba(255, 255, 255, 0.01);
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    box-sizing: border-box;
+    input-security: none;
+}
+
+.form input[type="submit"] {
+    font-family: "DM Sans", sans-serif;
+    background-color: var(--accent);
+    color: var(--text);
+    border: none;
+    padding: 15px;
+    width: 100%;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 10px;
+}
