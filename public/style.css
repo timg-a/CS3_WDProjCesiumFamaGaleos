@@ -15,6 +15,7 @@
 
 html {
     font-family: "DM Sans", sans-serif;
+    scrollbar-width: none;
 }
 
 body {
@@ -229,12 +230,14 @@ p {
 }
 
 footer {
-    text-align: center;
+    text-align: right;
     background-color: var(--background);
-    height: 100px;
+    height: 25px;
+    font-size: 10px;
+    bottom: 100%;
 }
 
-footer a {
+footer a{
     text-decoration: none;
 }
 
@@ -309,4 +312,61 @@ footer a {
     font-size: 18px;
     cursor: pointer;
     margin-top: 10px;
+}
+
+.form input[type="submit"]:hover {
+    background-color: #e54c4caa;
+    transition: background-color 0.2s;
+}
+
+.title-text {
+    position: absolute;
+    left: 5%;
+    bottom: 45%;
+    z-index: 100;
+}
+
+.title {
+    top: 0;
+    z-index: 1;
+    height: 250px;
+    margin: auto;
+    padding-top: 50px;
+    background: url("https://images.ctfassets.net/v8zaoys2pgzt/5GpsHZAl8mgJz9sfOERXNx/5594c024e1937d6ce302d3622de08e48/Table_Tennis-28.07.24-_DP97682.jpg");
+    background-position: center 50%;
+    background-size: cover;
+}
+
+.gradient {
+    z-index: 2;
+    position: absolute;
+    top: 90px;
+    width: 100%;
+    height: 250px;
+    background: linear-gradient(to bottom, var(--background), rgba(0,0,0,0));
+}
+
+p {
+    width: 75%;
+    margin: auto;
+}
+
+.toHistory {
+    font-family: "DM Sans", sans-serif;
+    display: block;
+    margin: 25px auto;
+    padding: 10px 20px;
+    font-size: 15px;
+    background-color: var(--menus);
+    color: var(--text);
+    border: 2px solid var(--accent);
+    border-radius: 67px;
+    cursor: pointer;
+    transition: filter 0.2s, background-color 0.2s;
+}
+
+.toHistory:hover {
+    filter: drop-shadow(0 2px 4px var(--accent));
+    background-color: var(--accent);
+    transition: filter 0.2s, background-color 0.2s;
 }
