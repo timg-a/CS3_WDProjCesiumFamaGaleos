@@ -371,7 +371,7 @@ p {
     transition: filter 0.2s, background-color 0.2s;
 }
 
-.oldTableTennis {
+.old-table-tennis {
     position: absolute;
     left: 5%;
     object-fit: cover;
@@ -379,7 +379,7 @@ p {
     width: 25%;
 }   
 
-.history-right {
+.history-origins {
     position: absolute;
     left: 35%;
     width: 60%;
