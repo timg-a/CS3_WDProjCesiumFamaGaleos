@@ -39,8 +39,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if (quizForm) {
         quizForm.addEventListener("submit", function (event) {
 
-            event.preventDefault();
-
             var form = new FormData(this);
 
             if (form.get("q1") === "yes") {
@@ -116,9 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             localStorage.setItem("playstyle", winner);
-
-            document.getElementById("result").innerText =
-                "Your Playstyle: " + winner;
+            return;
         });
     }
 
@@ -126,7 +122,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function checkData() {
     if (!localStorage.getItem("username")) {
-        alert("Please log in to access the Equipment page.");
-        return false;
+        event.preventDefault();
+        alert("Please log in to access this page.");
+        window.location.href = "login.html";
+    } else if (!localStorage.getItem("playstyle")) {
+        event.preventDefault();
+        if (confirm("A quiz must be taken to access this page. Would you like to take the quiz now?")) {
+            window.location.href = "quiz.html";
+        } else {
+            event.preventDefault();
+        }
     }
 }
