@@ -112,6 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             }
 
+            
             localStorage.setItem("playstyle", winner);
             return;
         });
