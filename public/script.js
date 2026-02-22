@@ -41,13 +41,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
             var form = new FormData(this);
 
-            if (form.get("q1") === "yes") {
-                localStorage.setItem("playstyle", "Beginner");
-                document.getElementById("result").innerText = "You are a Beginner.";
-                return;
-            }
-
             var scores = {
+                Beginner: 0,
                 Aggressor: 0,
                 Controller: 0,
                 AllRounder: 0,
@@ -57,6 +52,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
             function addPoint(type, n) {
                 scores[type] = scores[type] + n;
+            }
+
+            if (form.get("q1") === "yes") {
+                addPoint("Beginner", 9999);
             }
 
             if (form.get("q2") === "agree") addPoint("Aggressor", 4);
@@ -134,3 +133,39 @@ function checkData() {
         }
     }
 }
+
+const aggressor = document.getElementById("aggressor");
+const controller = document.getElementById("controller");
+const allRounder = document.getElementById("all-rounder");
+const brickWall = document.getElementById("brick-wall");
+const defender = document.getElementById("defender");
+
+function playstyleDiv() {
+    aggressor.style.display = "none";
+    controller.style.display = "none";
+    allRounder.style.display = "none";
+    brickWall.style.display = "none";
+    defender.style.display = "none";
+
+    let playstyle = localStorage.getItem("playstyle");
+
+    if (playstyle === "Aggressor") {
+        aggressor.style.display = "block";
+    }
+    if (playstyle === "Controller") {
+        controller.style.display = "block";
+    }
+    if (playstyle === "AllRounder") {
+        allRounder.style.display = "block";
+    }
+    if (playstyle === "BrickWall") {
+        brickWall.style.display = "block";
+    }
+    if (playstyle === "Defender") {
+        defender.style.display = "block";
+    }
+}
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    playstyleDiv();
+});
