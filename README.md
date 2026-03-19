@@ -37,6 +37,8 @@ New Webpages: Account/Login page and Quiz page
 
 -----------------------------------------------------------------------------------------------------------------
 
+## FINAL MODIFICATION PROPOSAL
+
 CRUD Implementation:
 
 (CR already done)
