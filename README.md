@@ -33,4 +33,12 @@ Wireframe: in assets folder
 
 Form Implementation: Forms can be implemented in order to find a user's playstyle, and afterwards recommend them players to watch or equipments to use. To remember the user's choice, we could also have them create an account.
 
-New Webpages: Account/Login page and Recommended page
+New Webpages: Account/Login page and Quiz page
+
+-----------------------------------------------------------------------------------------------------------------
+
+CRUD Implementation:
+
+(CR already done)
+
+Allow users to retake the quiz if they feel like their playstyle has changed, and show previous playstyle changes along with an ability to return to / delete that old playstyle.
