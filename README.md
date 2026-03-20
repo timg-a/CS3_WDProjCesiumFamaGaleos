@@ -43,4 +43,4 @@ CRUD Implementation:
 
 (CR already done)
 
-Allow users to retake the quiz if they feel like their playstyle has changed, and show previous playstyle changes along with an ability to return to / delete that old playstyle.
+Allows users to retake the quiz if their playstyle has evolved. It also allows them to view their previous playstyle changes while also giving them the power to return to or delete their old playstyle. This gives them freedom to do what they want while also giving them a way to look back on how much they have changed as a table tennis player.
