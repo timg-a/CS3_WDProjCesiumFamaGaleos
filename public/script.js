@@ -112,6 +112,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             }
 
+            alert("Your playstyle: " + winner);
+
             
             localStorage.setItem("playstyle", winner);
             return;
@@ -170,3 +172,24 @@ function playstyleDiv() {
 document.addEventListener('DOMContentLoaded', (event) => {
     playstyleDiv();
 });
+
+
+function loadCurrentPlaystyle() {
+    const style = localStorage.getItem("playstyle");
+    const display = document.getElementById("currentStyle");
+
+    if (!display) return;
+
+    if (style) {
+        display.textContent = "your playstyle: " + style;
+    } else {
+        display.textContent = "your playstyle: none";
+    }
+}
+
+function resetPlaystyle() {
+    localStorage.removeItem("playstyle");
+    loadCurrentPlaystyle();
+}
+
+loadCurrentPlaystyle();
