@@ -15,6 +15,25 @@ window.onscroll = function() {
 document.addEventListener("DOMContentLoaded", function () {
 
     var loginForm = document.getElementById("loginForm");
+    var signupForm = document.getElementById("signupForm");
+
+    if (signupForm) {
+        signupForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            var username = document.getElementById("usernameSU").value;
+            var password = document.getElementById("passwordSU").value;
+
+            if (username && password) {
+                localStorage.setItem("username", username);
+                localStorage.setItem("password", password);
+                alert("Account created successfully! Please log in.");
+                window.location.href = "login.html";
+            } else {
+                alert("Please fill in all fields.");
+            }
+        });
+    }
 
     if (loginForm) {
         loginForm.addEventListener("submit", function (e) {
@@ -23,13 +42,11 @@ document.addEventListener("DOMContentLoaded", function () {
             var username = document.getElementById("username").value;
             var password = document.getElementById("password").value;
 
-            if (username && password) {
+            if (username === localStorage.getItem("username") && password === localStorage.getItem("password")) {
                 alert("Welcome " + username + "!");
-                localStorage.setItem("username", username);
-                localStorage.setItem("password", password);
                 window.location.href = "index.html";
             } else {
-                alert("Please fill in all fields.");
+                alert("Incorrect credentials / No account.");
             }
         });
     }
@@ -38,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (quizForm) {
         quizForm.addEventListener("submit", function (event) {
-
+            event.preventDefault();
             var form = new FormData(this);
 
             localStorage.setItem("playstyle", []);

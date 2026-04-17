@@ -331,9 +331,9 @@ footer a{
 }
 
 .title-text {
-    position: absolute;
-    left: 5%;
-    bottom: 45%;
+    position: relative;
+    right: 33vw;
+    top: 15vh;
     z-index: 100;
 }
 
