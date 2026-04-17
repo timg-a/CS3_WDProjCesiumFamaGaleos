@@ -41,6 +41,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
             var form = new FormData(this);
 
+            localStorage.setItem("playstyle", []);
+
             var scores = {
                 Beginner: 0,
                 Aggressor: 0,
@@ -112,11 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             }
 
-            alert("Your playstyle: " + winner);
-
-            
-            localStorage.setItem("playstyle", winner);
-            return;
+            alert("Your playstyle is: " + winner);
         });
     }
 
@@ -181,9 +179,9 @@ function loadCurrentPlaystyle() {
     if (!display) return;
 
     if (style) {
-        display.textContent = "your playstyle: " + style;
+        display.textContent = "Your playstyle: " + style;
     } else {
-        display.textContent = "your playstyle: none";
+        display.textContent = "Your playstyle: none";
     }
 }
 
