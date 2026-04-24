@@ -1,4 +1,3 @@
-
 let oldPosition = window.scrollY;
 
 window.onscroll = function() {
@@ -12,28 +11,10 @@ window.onscroll = function() {
 
     oldPosition = currentPosition;
 }
+
 document.addEventListener("DOMContentLoaded", function () {
 
     var loginForm = document.getElementById("loginForm");
-    var signupForm = document.getElementById("signupForm");
-
-    if (signupForm) {
-        signupForm.addEventListener("submit", function (e) {
-            e.preventDefault();
-
-            var username = document.getElementById("usernameSU").value;
-            var password = document.getElementById("passwordSU").value;
-
-            if (username && password) {
-                localStorage.setItem("username", username);
-                localStorage.setItem("password", password);
-                alert("Account created successfully! Please log in.");
-                window.location.href = "login.html";
-            } else {
-                alert("Please fill in all fields.");
-            }
-        });
-    }
 
     if (loginForm) {
         loginForm.addEventListener("submit", function (e) {
@@ -42,11 +23,13 @@ document.addEventListener("DOMContentLoaded", function () {
             var username = document.getElementById("username").value;
             var password = document.getElementById("password").value;
 
-            if (username === localStorage.getItem("username") && password === localStorage.getItem("password")) {
+            if (username && password) {
                 alert("Welcome " + username + "!");
+                localStorage.setItem("username", username);
+                localStorage.setItem("password", password);
                 window.location.href = "index.html";
             } else {
-                alert("Incorrect credentials / No account.");
+                alert("Please fill in all fields.");
             }
         });
     }
@@ -54,27 +37,28 @@ document.addEventListener("DOMContentLoaded", function () {
     var quizForm = document.getElementById("quizForm");
     var playstyleArray = [];
 
-    if (quizForm) {
-        quizForm.addEventListener("submit", function (event) {
-            event.preventDefault();
-            var form = new FormData(this);
+if (quizForm) {
+    quizForm.addEventListener("submit", function (event) {
+        event.preventDefault();
 
-            var scores = {
-                Beginner: 0,
-                Aggressor: 0,
-                Controller: 0,
-                AllRounder: 0,
-                Defender: 0,
-                BrickWall: 0
-            };
+        var form = new FormData(this);
 
-            function addPoint(type, n) {
-                scores[type] = scores[type] + n;
-            }
+        var scores = {
+            Beginner: 0,
+            Aggressor: 0,
+            Controller: 0,
+            AllRounder: 0,
+            Defender: 0,
+            BrickWall: 0
+        };
 
-            if (form.get("q1") === "yes") {
-                addPoint("Beginner", 9999);
-            }
+        function addPoint(type, n) {
+            scores[type] += n;
+        }
+
+        if (form.get("q1") === "yes") {
+            addPoint("Beginner", 9999);
+        }
 
             if (form.get("q2") === "agree") addPoint("Aggressor", 4);
             if (form.get("q2") === "neutral") addPoint("Controller", 4);
@@ -85,44 +69,44 @@ document.addEventListener("DOMContentLoaded", function () {
                 addPoint("Aggressor", -8);
             }
 
-            if (form.get("q3") === "agree") addPoint("Aggressor", 4);
-            if (form.get("q3") === "neutral") {
-                addPoint("AllRounder", 3);
-                addPoint("Controller", 3);
-                addPoint("BrickWall", 1);
-            }
-            if (form.get("q3") === "disagree") addPoint("Defender", 4);
+        if (form.get("q3") === "agree") addPoint("Aggressor", 4);
+        if (form.get("q3") === "neutral") {
+            addPoint("AllRounder", 3);
+            addPoint("Controller", 3);
+            addPoint("BrickWall", 1);
+        }
+        if (form.get("q3") === "disagree") addPoint("Defender", 4);
 
-            if (form.get("q4") === "agree") {
-                addPoint("Controller", 4);
-                addPoint("AllRounder", 4);
-                addPoint("BrickWall", 3);
-                addPoint("Defender", 4);
-            }
-            if (form.get("q4") === "disagree") addPoint("Aggressor", 4);
+        if (form.get("q4") === "agree") {
+            addPoint("Controller", 4);
+            addPoint("AllRounder", 4);
+            addPoint("BrickWall", 3);
+            addPoint("Defender", 4);
+        }
+        if (form.get("q4") === "disagree") addPoint("Aggressor", 4);
 
-            if (form.get("q5") === "agree") {
-                addPoint("BrickWall", 3);
-                addPoint("Defender", 4);
-                addPoint("AllRounder", 2);
-            }
-            if (form.get("q5") === "neutral") {
-                addPoint("Controller", 4);
-            }
-            if (form.get("q5") === "disagree") addPoint("Aggressor", 4);
+        if (form.get("q5") === "agree") {
+            addPoint("BrickWall", 3);
+            addPoint("Defender", 4);
+            addPoint("AllRounder", 2);
+        }
+        if (form.get("q5") === "neutral") {
+            addPoint("Controller", 4);
+        }
+        if (form.get("q5") === "disagree") addPoint("Aggressor", 4);
 
-            if (form.get("q6") === "agree") {
-                addPoint("Controller", 3);
-                addPoint("Defender", 4);
-            }
-            if (form.get("q6") === "neutral") {
-                addPoint("BrickWall", 4);
-                addPoint("AllRounder", 3);
-            }
-            if (form.get("q6") === "disagree") addPoint("Aggressor", 4);
+        if (form.get("q6") === "agree") {
+            addPoint("Controller", 3);
+            addPoint("Defender", 4);
+        }
+        if (form.get("q6") === "neutral") {
+            addPoint("BrickWall", 4);
+            addPoint("AllRounder", 3);
+        }
+        if (form.get("q6") === "disagree") addPoint("Aggressor", 4);
 
-            var highest = 0;
-            var winner = "";
+        var highest = 0;
+        var winner = "";
 
             for (var type in scores) {
                 if (scores[type] > highest) {
@@ -147,9 +131,8 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-});
 
-function checkData() {
+function checkData(event) {
     if (!localStorage.getItem("username")) {
         event.preventDefault();
         alert("Please log in to access this page.");

@@ -43,7 +43,7 @@
 
     <div class="playstyle-box">
     <p id="currentStyle">your playstyle: none</p>
-    <a href="./quiz.html">change?</a><br>
+    <a href="./quiz.html" onclick="localStorage.setItem('previousPage', window.location.href)">change?</a><br>
     <a href="#" onclick="resetPlaystyle()">reset?</a>
 
     <ol id="style-history"></ol>
