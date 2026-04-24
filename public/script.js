@@ -52,6 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     var quizForm = document.getElementById("quizForm");
+    var playstyleArray = [];
 
     if (quizForm) {
         quizForm.addEventListener("submit", function (event) {
@@ -81,6 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 addPoint("AllRounder", 2);
                 addPoint("Defender", 3);
                 addPoint("BrickWall", 1);
+                addPoint("Aggressor", -8);
             }
 
             if (form.get("q3") === "agree") addPoint("Aggressor", 4);
@@ -129,10 +131,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             }
 
+            playstyleArray.unshift(winner);
+            console.log(playstyleArray);
+
+            if (playstyleArray.length > 5) {
+                playstyleArray.pop();
+            }
+
             alert("Your playstyle: " + winner);
 
+
             
-            localStorage.setItem("playstyle", winner);
+            localStorage.setItem("playstyle", JSON.stringify(playstyleArray));
             return;
         });
     }
@@ -167,21 +177,22 @@ function playstyleDiv() {
     brickWall.style.display = "none";
     defender.style.display = "none";
 
-    let playstyle = localStorage.getItem("playstyle");
+    let playstyle = JSON.parse(localStorage.getItem("playstyle"));
+    console.log(playstyle);
 
-    if (playstyle === "Aggressor") {
+    if (playstyle[0] === "Aggressor") {
         aggressor.style.display = "block";
     }
-    if (playstyle === "Controller") {
+    if (playstyle[0] === "Controller") {
         controller.style.display = "block";
     }
-    if (playstyle === "AllRounder") {
+    if (playstyle[0] === "AllRounder") {
         allRounder.style.display = "block";
     }
-    if (playstyle === "BrickWall") {
+    if (playstyle[0] === "BrickWall") {
         brickWall.style.display = "block";
     }
-    if (playstyle === "Defender") {
+    if (playstyle[0] === "Defender") {
         defender.style.display = "block";
     }
 }
@@ -192,13 +203,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 
 function loadCurrentPlaystyle() {
-    const style = localStorage.getItem("playstyle");
+    const style = JSON.parse(localStorage.getItem("playstyle"));
     const display = document.getElementById("currentStyle");
 
     if (!display) return;
 
     if (style) {
-        display.textContent = "your playstyle: " + style;
+        display.textContent = "Your Playstyle: " + style[0];
     } else {
         display.textContent = "your playstyle: none";
     }
